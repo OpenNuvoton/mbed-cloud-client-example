@@ -23,6 +23,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#include "memory_tests.h"
+
 static MbedCloudClient* _client;
 
 #ifdef ARM_UPDATE_CLIENT_VERSION_VALUE
@@ -61,7 +63,13 @@ void update_authorize(int32_t request)
         case MbedCloudClient::UpdateRequestInstall:
             printf("Firmware install requested\r\n");
             printf("Authorization granted\r\n");
+#ifdef MBED_HEAP_STATS_ENABLED
+            print_heap_stats();
+#endif
             _client->update_authorize(MbedCloudClient::UpdateRequestInstall);
+#ifdef MBED_HEAP_STATS_ENABLED
+            print_heap_stats();
+#endif
             break;
 
         default:

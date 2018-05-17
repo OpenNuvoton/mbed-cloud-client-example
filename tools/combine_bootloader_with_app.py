@@ -196,6 +196,12 @@ if __name__ == '__main__':
         },
         'nucleo_f429zi': {
             'mem_start': '0x08000000'
+        },
+        'numaker_pfm_m487': {
+            'mem_start': '0x0'
+        },
+        'numaker_pfm_m2351_ns': {
+            'mem_start': '0x10010000'
         }
     }
 
