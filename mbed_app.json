@@ -32,12 +32,53 @@
             "target.mbed_app_start"            : "0x08010400",
             "update-client.bootloader-details" : "0x08007300",
             "update-client.application-details": "(0x08000000+64*1024)"
+        },
+        "NUMAKER_PFM_M487": {
+            "target.mbed_app_start"            : "0x18000",
+            "update-client.bootloader-details" : "0x0",
+            "update-client.application-details": "0x17000",
+
+            "storage-selector.storage"          : "NU_SD_CARD",
+            "update-client.storage-address"     : "(1024*1024*800)",
+            "update-client.storage-size"        : "(1024*1024*2)",
+
+            "button-pinname"                    : "SW2",
+
+            "target.features_remove"            : ["LWIP"],
+            "drivers.uart-serial-rxbuf-size"    : 1024,
+
+            "target.macros_add": [
+                "MBED_HEAP_STATS_ENABLED=1",
+                "MBED_MEM_TRACING_ENABLED=1",
+                "PAL_INT_FLASH_NUM_SECTIONS=2"
+            ],
+
+            "client_app.sotp-section-1-address"     : "0x15000",
+            "client_app.sotp-section-1-size"        : "0x1000",
+            "client_app.sotp-section-2-address"     : "0x16000",
+            "client_app.sotp-section-2-size"        : "0x1000"
         }
     },
     "config": {
         "network-interface": {
             "help": "Options are ETHERNET, WIFI_ESP8266, WIFI_ODIN",
-            "value": "ETHERNET"
+            "value": "WIFI_ESP8266"
+        },
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"HUAWEI-F2C9\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"td06309i\""
+        },
+        "wifi-tx": {
+            "help": "TX pin for serial connection to external device",
+            "value": "D1"
+        },
+        "wifi-rx": {
+            "help": "RX pin for serial connection to external device",
+            "value": "D0"
         },
         "developer-mode": {
             "help": "Enable Developer mode to skip Factory enrollment",
