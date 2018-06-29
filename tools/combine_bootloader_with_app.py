@@ -197,6 +197,9 @@ if __name__ == '__main__':
         'nucleo_f429zi': {
             'mem_start': '0x08000000'
         },
+        'numaker_pfm_nuc472': {
+            'mem_start': '0x0'
+        },
         'numaker_pfm_m487': {
             'mem_start': '0x0'
         }
