@@ -1,0 +1,25 @@
+{
+    "name": "bootloader_nuvoton",
+    "target_overrides": {
+        "NUMAKER_PFM_NUC472": {
+            "target.header_offset"                  : "0x13000",
+            "target.app_offset"                     : "0x14000",
+            "target.bootloader_img"                 : "TARGET_NUMAKER_PFM_NUC472/mbed-bootloader-v3_4_0-nuc472.bin"
+        },
+        "NUMAKER_PFM_M487": {
+            "target.header_offset"                  : "0x13000",
+            "target.app_offset"                     : "0x14000",
+            "target.bootloader_img"                 : "TARGET_NUMAKER_PFM_M487/mbed-bootloader-v3_4_0-m487.bin"
+        },
+        "NUMAKER_IOT_M487": {
+            "target.header_offset"                  : "0x13000",
+            "target.app_offset"                     : "0x14000",
+            "target.bootloader_img"                 : "TARGET_NUMAKER_IOT_M487/mbed-bootloader-v3_4_0-m487_iot.bin"
+        },
+        "NUMAKER_PFM_M2351": {
+            "target.header_offset"                  : "0x13000",
+            "target.app_offset"                     : "0x14000",
+            "target.bootloader_img"                 : "TARGET_NUMAKER_PFM_M2351/mbed-bootloader-v3_4_0-m2351.hex"
+        }
+    }
+}

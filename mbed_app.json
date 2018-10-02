@@ -6,7 +6,7 @@
     "target_overrides": {
         "*": {
             "target.features_add"               : ["BOOTLOADER", "STORAGE"],
-            "target.components_add"             : ["SD"],
+            "target.components_add"             : ["NUSD"],
             "platform.stdio-baud-rate"          : 115200,
             "platform.stdio-convert-newlines"   : true,
             "platform.stdio-buffered-serial"    : true,
@@ -17,8 +17,8 @@
             "update-client.storage-locations"   : 1,
             "mbed-trace.enable": null,
             "nsapi.default-wifi-security"       : "WPA_WPA2",
-            "nsapi.default-wifi-ssid"           : "\"SSID\"",
-            "nsapi.default-wifi-password"       : "\"Password\""
+            "nsapi.default-wifi-ssid"           : "\"HUAWEI-F2C9\"",
+            "nsapi.default-wifi-password"       : "\"td06309i\""
         },
         "STM_EMAC": {
             "lwip.pbuf-pool-size" : 16,
@@ -58,6 +58,128 @@
             "idw0xx1.tx": "PA_9",
             "idw0xx1.rx": "PA_10",
             "target.macros_remove"                  : ["MBEDTLS_CONFIG_HW_SUPPORT"]
+        },
+        "NUMAKER_PFM_NUC472": {
+            "target.network-default-interface-type" : "WIFI",
+            "update-client.bootloader-details"      : "0x0",
+            "update-client.application-details"     : "0x13000",
+
+            "button-pinname"                        : "SW1",
+
+            "drivers.uart-serial-rxbuf-size"        : 1024,
+            "drivers.uart-serial-txbuf-size"        : 1024,
+
+            "client_app.partition_mode"             : 1,
+            "client_app.auto_partition"             : 1,
+            "client_app.pal_number_of_partition"    : 1,
+            "client_app.primary_partition_size"     : "(1024*1024*460)",
+
+            "client_app.sotp-section-1-address"     : "0x11000",
+            "client_app.sotp-section-1-size"        : "0x1000",
+            "client_app.sotp-section-2-address"     : "0x12000",
+            "client_app.sotp-section-2-size"        : "0x1000",
+
+            "update-client.storage-address"         : "(1024*1024*480)",
+            "update-client.storage-size"            : "(1024*1024*2)",
+
+            "target.macros_add": [
+                "MBED_HEAP_STATS_ENABLED=1",
+                "PAL_INT_FLASH_NUM_SECTIONS=2",
+                "ESP8266_AT_SEL=ESP8266_AT_EXTERN"
+            ]
+        },
+        "NUMAKER_PFM_M487": {
+            "target.network-default-interface-type" : "WIFI",
+            "update-client.bootloader-details"      : "0x0",
+            "update-client.application-details"     : "0x13000",
+
+            "button-pinname"                        : "SW2",
+
+            "drivers.uart-serial-rxbuf-size"        : 1024,
+            "drivers.uart-serial-txbuf-size"        : 1024,
+
+            "client_app.partition_mode"             : 1,
+            "client_app.auto_partition"             : 1,
+            "client_app.pal_number_of_partition"    : 1,
+            "client_app.primary_partition_size"     : "(1024*1024*460)",
+
+            "client_app.sotp-section-1-address"     : "0x11000",
+            "client_app.sotp-section-1-size"        : "0x1000",
+            "client_app.sotp-section-2-address"     : "0x12000",
+            "client_app.sotp-section-2-size"        : "0x1000",
+
+            "update-client.storage-address"         : "(1024*1024*480)",
+            "update-client.storage-size"            : "(1024*1024*2)",
+
+            "target.macros_add": [
+                "MBED_HEAP_STATS_ENABLED=1",
+                "PAL_INT_FLASH_NUM_SECTIONS=2",
+                "ESP8266_AT_SEL=ESP8266_AT_EXTERN"
+            ]
+        },
+        "NUMAKER_IOT_M487": {
+            "target.network-default-interface-type" : "WIFI",
+            "update-client.bootloader-details"      : "0x0",
+            "update-client.application-details"     : "0x13000",
+
+            "button-pinname"                        : "SW2",
+
+            "drivers.uart-serial-rxbuf-size"        : 1024,
+            "drivers.uart-serial-txbuf-size"        : 1024,
+
+            "client_app.partition_mode"             : 1,
+            "client_app.auto_partition"             : 1,
+            "client_app.pal_number_of_partition"    : 1,
+            "client_app.primary_partition_size"     : "(1024*1024*460)",
+
+            "client_app.sotp-section-1-address"     : "0x11000",
+            "client_app.sotp-section-1-size"        : "0x1000",
+            "client_app.sotp-section-2-address"     : "0x12000",
+            "client_app.sotp-section-2-size"        : "0x1000",
+
+            "update-client.storage-address"         : "(1024*1024*480)",
+            "update-client.storage-size"            : "(1024*1024*2)",
+
+            "target.macros_add": [
+                "MBED_HEAP_STATS_ENABLED=1",
+                "PAL_INT_FLASH_NUM_SECTIONS=2",
+                "ESP8266_AT_SEL=ESP8266_AT_ONBOARD"
+            ]
+        },
+        "NUMAKER_PFM_M2351": {
+            "target.network-default-interface-type" : "WIFI",
+            "update-client.bootloader-details"      : "0x0",
+            "update-client.application-details"     : "0x10023000",
+
+            "button-pinname"                        : "SW2",
+            "led-pinname"                           : "LED1",
+
+            "drivers.uart-serial-rxbuf-size"        : 1024,
+            "drivers.uart-serial-txbuf-size"        : 1024,
+
+            "client_app.partition_mode"             : 1,
+            "client_app.auto_partition"             : 1,
+            "client_app.pal_number_of_partition"    : 1,
+            "client_app.primary_partition_size"     : "(1024*1024*460)",
+
+            "client_app.sotp-section-1-address"     : "0x10021000",
+            "client_app.sotp-section-1-size"        : "0x1000",
+            "client_app.sotp-section-2-address"     : "0x10022000",
+            "client_app.sotp-section-2-size"        : "0x1000",
+
+            "update-client.storage-address"         : "(1024*1024*480)",
+            "update-client.storage-size"            : "(1024*1024*2)",
+
+            "target.mbed_rom_start":    "0x10010000",
+            "target.mbed_rom_size":     "0x70000",
+            "target.mbed_ram_start":    "0x30002000",
+            "target.mbed_ram_size":     "0x16000",
+
+            "target.macros_add": [
+                "MBED_HEAP_STATS_ENABLED=1",
+                "PAL_INT_FLASH_NUM_SECTIONS=2",
+                "ESP8266_AT_SEL=ESP8266_AT_ONBOARD"
+            ]
         }
     },
     "config": {
