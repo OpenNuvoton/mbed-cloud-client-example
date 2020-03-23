@@ -962,7 +962,8 @@ def checkToolchainEnv(toolchain):
     toolchainEnv = {"ARMCC":(("ARMCC_DIR", "ARM_PATH", "MBED_ARM_PATH"), "armcc"),
                     "ARMGCC":(("ARMGCC_DIR", "GCC_ARM_PATH", "MBED_GCC_ARM_PATH"), "arm-none-eabi-gcc"),
                     "GCC": (("GCC_DIR",), "gcc"),
-                    "GCC-OPENWRT": (("TOOLCHAIN_DIR",), "arm-openwrt-linux-gcc")}
+                    "GCC-OPENWRT": (("TOOLCHAIN_DIR",), "arm-nuvoton-linux-uclibcgnueabi-gcc"),
+                    "GCC-NUC980": (("TOOLCHAIN_DIR",), "arm-nuvoton-linux-uclibcgnueabi-gcc")}
 
     toolchainInfo = toolchainEnv.get(toolchain, None)
     if None == toolchainInfo:

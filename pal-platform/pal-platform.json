@@ -114,5 +114,27 @@
         "to": "Middleware/mbedtls/mbedtls"
       }
     }
+  },
+  "ARM_NUC980_mbedtls": {
+    "device": {
+      "name": "NUC980"
+    },
+    "os": {
+      "name": "Linux_NUC980"
+    },
+    "middleware": {
+      "mbedtls": {
+        "version": "2.19.1",
+        "from": {
+          "protocol": "git",
+          "location": "https://github.com/ARMmbed/mbedtls.git",
+          "tag": "mbedtls-2.19.1",
+          "submodules": {
+            "crypto": {}
+          }
+        },
+        "to": "Middleware/mbedtls/mbedtls"
+      }
+    }
   }
 }
